@@ -115,7 +115,7 @@
 
 .cardTextContainer {
   width: 100%;
-  height: 74vh;
+  height: 78vh;
   @include a.centerItem;
   flex-direction: column;
   justify-content: flex-start;
@@ -126,9 +126,9 @@
   border-bottom-right-radius: a.$borderRadius;
   border-bottom-left-radius: a.$borderRadius;
 
-  @include a.breakpoint(tablet) {
-    height: 78vh;
-  }
+  // @include a.breakpoint(tablet) {
+  //   height: 78vh;
+  // }
 
   @include a.breakpoint(slidebreak) {
     height: 82vh;

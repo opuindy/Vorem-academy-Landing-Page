@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './chat.module.scss';
-import { IoChatbubbleEllipsesSharp, IoClose } from 'react-icons/io5';
+import { IoChatbubbleEllipsesSharp } from 'react-icons/io5';
 
 const Chat = () => {
   return (

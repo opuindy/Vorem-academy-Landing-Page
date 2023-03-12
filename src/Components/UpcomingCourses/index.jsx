@@ -19,15 +19,6 @@ const UpcomingCourses = () => {
     },
   };
 
-  const options = {
-    animationType: 'slide',
-    animationDuration: 10000,
-    // infinite: true,
-    // autoPlay: true,
-    controlsStrategy: 'default',
-    animationTimingFunction: 'cubic-bezier(.42,0,.58,1)',
-  };
-
   return (
     <section className={styles.upcomingSection}>
       <div className={styles.upcomingContainer}>
@@ -54,7 +45,6 @@ const UpcomingCourses = () => {
             disableButtonsControls={true}
             freezable={false}
             infinite={true}
-            options={options}
           >
             {upComingCourses.map((course, index) => {
               return (

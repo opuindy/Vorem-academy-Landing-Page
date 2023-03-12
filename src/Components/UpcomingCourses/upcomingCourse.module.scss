@@ -1,0 +1,122 @@
+@use '../../styles/abstract/' as a;
+
+.upcomingSection {
+  width: 100%;
+  min-height: 45vh;
+  @include a.centerItem;
+  margin-top: 3em;
+}
+.upcomingContainer {
+  width: 100%;
+  max-width: a.$max-width;
+  height: 100%;
+  @include a.centerItem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  padding-inline: 1em;
+  @include a.breakpoint(tablet) {
+    padding-inline: 2em;
+  }
+  @include a.breakpoint(desktop) {
+    padding-inline: 0;
+  }
+
+  h3 {
+    font-size: a.$font-size;
+    text-align: left;
+    text-transform: capitalize;
+    margin-block: 0;
+    // margin-bottom: -0.2em;
+  }
+
+  p {
+    font-size: a.$font-16;
+    text-align: left;
+    margin-block: 0;
+    margin-bottom: 0.5em;
+  }
+}
+
+.sliderContainer {
+  margin-top: 1em;
+  width: 100%;
+  height: max-content;
+  margin-block: auto;
+}
+
+.slideItemsWrapper {
+  padding-inline: 5px;
+  width: 100%;
+  height: 4rem;
+  @include a.breakpoint(tablet) {
+    padding-inline: 8px;
+  }
+}
+
+.slideItems {
+  width: 100%;
+  height: 100%;
+  border-radius: a.$borderRadius;
+  background: a.$blueBackground;
+  @include a.centerItem;
+  gap: 0.5em;
+
+  p {
+    font-size: a.$font-12;
+    width: max-content;
+    margin-block: auto;
+  }
+}
+
+.arrowIcon {
+  margin-block: auto;
+  font-size: 1.15rem;
+}
+
+.studentContainer {
+  width: 100%;
+  height: 38vh;
+  margin-top: 3em;
+  padding-inline: 2em;
+  border-radius: a.$borderRadius;
+  background: a.$blueBackground;
+  @include a.centerItem;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include a.breakpoint(desktop) {
+    height: 30vh;
+    padding-inline: 7.5rem;
+  }
+
+  &__title {
+    font-size: a.$font-size;
+    margin-block: 0;
+    text-transform: lowercase;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  p {
+    font-size: a.$font-15;
+    line-height: 2.5;
+    margin-block: 0;
+    @include a.breakpoint(desktop) {
+      line-height: 1.5;
+    }
+  }
+
+  button {
+    border: none;
+    outline: none;
+    width: 7.5rem;
+    height: 3.4rem;
+    border-radius: a.$borderRadius;
+    font-size: a.$font-13;
+    color: a.$darkBlueBackground;
+    margin-top: 1.5em;
+    cursor: pointer;
+  }
+}

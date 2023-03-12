@@ -1,0 +1,42 @@
+@use '../../styles/abstract/' as a;
+
+.container {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: a.$blueBackground;
+  border-radius: a.$borderRadius;
+  @include a.centerItem;
+  position: fixed;
+  top: 80vh;
+  right: 1.6em;
+  z-index: 2;
+  animation: bounce 1.2s infinite;
+
+  @keyframes bounce {
+    0% {
+      top: 83.5vh;
+    }
+    50% {
+      top: 81.5vh;
+    }
+    100% {
+      top: 83.5vh;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include a.breakpoint(tablet) {
+    right: 2.1em;
+  }
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.vanish {
+  display: none;
+}

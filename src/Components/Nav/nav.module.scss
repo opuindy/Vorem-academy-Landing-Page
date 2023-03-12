@@ -1,0 +1,207 @@
+@use '../../styles/abstract/' as a;
+
+.header {
+  width: 100%;
+  background: a.$blueBackground;
+  padding-inline: a.$padding-small;
+  @include a.transition;
+  @include a.centerItem;
+  z-index: 5;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  @include a.breakpoint(tablet) {
+    padding-inline: a.$padding-medium;
+  }
+
+  @include a.breakpoint(desktop) {
+    padding-inline: 0;
+    background: none;
+  }
+
+  &__navContainer {
+    width: 100%;
+    max-width: a.$max-width;
+    height: max-content;
+    @include a.centerItem;
+    flex-direction: column;
+
+    @include a.breakpoint(desktop) {
+      flex-direction: row;
+      height: a.rem(80);
+      justify-content: space-between;
+    }
+
+    .logo_Button_Container {
+      width: 100%;
+      height: 100%;
+      @include a.centerItem;
+      justify-content: space-between;
+      align-items: center;
+
+      .logoContainer {
+        height: 5rem;
+        width: 9rem;
+        @include a.centerItem;
+      }
+    }
+  }
+}
+
+.linksContainer {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  @include a.transition;
+
+  @include a.breakpoint(desktop) {
+    display: contents;
+    width: max-content;
+    height: auto !important;
+  }
+}
+
+.navLinks {
+  width: 100%;
+  padding-bottom: 2em;
+  padding-left: 0;
+  list-style-type: none;
+  @include a.centerItem;
+
+  flex-direction: column;
+  gap: 1em;
+  align-items: flex-start;
+
+  @include a.breakpoint(desktop) {
+    width: max-content;
+    gap: 2em;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+
+  .LinkContainer {
+    width: 100%;
+    height: 2.5rem;
+    @include a.centerItem;
+    text-align: left;
+
+    @include a.breakpoint(desktop) {
+      padding-block: 1.5em;
+      width: max-content;
+    }
+
+    &:last-of-type {
+      width: 100%;
+      border-radius: a.rem(10);
+      text-align: center;
+      padding-block: 1.5em;
+      background: a.$darkBlueBackground;
+      * {
+        justify-content: center;
+      }
+      @include a.breakpoint(desktop) {
+        background: a.$blueBackground;
+        margin-block: auto;
+        * {
+          padding-inline: 0.7em;
+        }
+      }
+    }
+  }
+  .link {
+    font-size: a.$font-16;
+    font-weight: a.weight(medium);
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: left;
+    padding-right: 2em;
+    @include a.centerItem;
+    justify-content: flex-start;
+
+    @include a.breakpoint(tablet) {
+      font-size: a.$font-17;
+    }
+
+    @include a.breakpoint(desktop) {
+      height: auto !important;
+      width: max-content;
+      justify-content: space-between;
+      flex-direction: row;
+      padding-right: 0;
+    }
+  }
+}
+
+.menuBtn {
+  height: a.rem(25);
+  width: a.rem(25);
+  cursor: pointer;
+  position: relative;
+
+  @include a.breakpoint(desktop) {
+    display: none;
+  }
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 0.8rem;
+    width: 100%;
+    height: a.rem(1.5);
+    border-radius: 50px;
+    background: a.$Text;
+    @include a.transition;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: a.rem(-8);
+      width: 100%;
+      height: a.rem(1.5);
+      border-radius: 50px;
+      background: a.$Text;
+      @include a.transition;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: a.rem(8);
+      width: 100%;
+      height: a.rem(1.5);
+      border-radius: 50px;
+      background: a.$Text;
+      @include a.transition;
+    }
+
+    &.open {
+      transform: rotate(720deg);
+      background: transparent;
+      @include a.transition;
+
+      &::before {
+        width: 95%;
+        height: a.rem(2.3);
+        transform: rotate(45deg) translate(a.rem(10), a.rem(1.5));
+
+        @include a.transition;
+      }
+
+      &::after {
+        width: 95%;
+        height: a.rem(2.3);
+        transform: rotate(-45deg) translate(a.rem(10), a.rem(-1.5));
+        @include a.transition;
+      }
+    }
+  }
+}
+
+.true {
+  @include a.breakpoint(desktop) {
+    background: a.$blueBackground;
+    box-shadow: a.$boxShadow;
+  }
+}

@@ -1,0 +1,32 @@
+@use '../../styles/abstract/' as a;
+
+.chatSection {
+  width: max-content;
+  height: max-content;
+  @include a.centerItem;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  top: 90vh;
+  right: 1em;
+  z-index: 2;
+  gap: 1em;
+  @include a.breakpoint(tablet) {
+    right: 1.5em;
+  }
+}
+
+.chatIconContainer {
+  height: 3.8rem;
+  width: 3.8rem;
+  @include a.centerItem;
+  border-radius: 50%;
+  background: a.$chatBackground;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__chatIcon {
+    font-size: 2rem;
+  }
+}

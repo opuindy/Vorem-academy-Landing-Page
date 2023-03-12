@@ -8,8 +8,6 @@ import {
   IoChevronForward,
   IoChevronBack,
 } from 'react-icons/io5';
-import 'slick-carousel/slick/slick.scss';
-import 'slick-carousel/slick/slick-theme.scss';
 import { images } from '../../utilities/images';
 
 const Course = () => {
@@ -21,7 +19,7 @@ const Course = () => {
     768: {
       items: 2,
     },
-    1204: {
+    1104: {
       items: 3,
     },
   };

@@ -5,7 +5,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/scss/alice-carousel.scss';
 import { upComingCourses } from '../../utilities/courseList';
 
-const TestUpcomingCourses = () => {
+const UpcomingCourses = () => {
   const responsive = {
     0: {
       items: 1,
@@ -82,4 +82,4 @@ const TestUpcomingCourses = () => {
   );
 };
 
-export default TestUpcomingCourses;
+export default UpcomingCourses;
